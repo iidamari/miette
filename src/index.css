@@ -292,12 +292,12 @@ button {
 }
 
 /* Navigation */
-
 .home-navigation {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 22px;
+  gap: 35px;
   margin-top: 45px;
 }
 
@@ -357,3 +357,192 @@ button {
     font-size: 36px;
   }
 }
+/* DISCOVER PAGE */
+
+.discover-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 30px;
+  background: #E8DFD1;
+}
+
+.discover-magazine {
+  width: 100%;
+}
+
+/* Left page */
+
+.discover-left {
+  justify-content: center;
+}
+
+.discover-label {
+  position: absolute;
+  top: 35px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #51463F;
+}
+
+.discover-left-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discover-title {
+  font-family: 'Italianno', cursive;
+  font-size: 65px;
+  font-weight: 400;
+  color: #29251F;
+  margin: 0;
+}
+
+.discover-subtitle {
+  font-size: 11px;
+  color: #81786D;
+  text-align: center;
+}
+
+/* Culture navigation */
+
+.culture-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.culture-navigation button {
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 5px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #51463F;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.culture-navigation button:hover {
+  border-bottom-color: #8F867A;
+}
+
+/* Right page */
+.discover-right-center {
+  max-width: 390px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -180px;
+}
+
+.discover-welcome {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #51463F;
+}
+
+.discover-recipe-title {
+  font-family: 'Italianno', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #29251F;
+  text-align: center;
+}
+
+.discover-description {
+  max-width: 300px;
+  font-size: 11px;
+  color: #81786D;
+  text-align: center;
+}
+
+.recipe-placeholder {
+  width: 100%;
+  min-height: 150px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #E8E1D7;
+  border-bottom: 1px solid #E8E1D7;
+}
+
+.recipe-placeholder p {
+  font-family: 'Italianno', cursive;
+  font-size: 28px;
+  color: #8F867A;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .discover-page {
+    padding: 16px;
+  }
+
+  .discover-magazine {
+    grid-template-columns: 1fr;
+  }
+
+  .discover-left,
+  .discover-right {
+    min-height: 420px;
+  }
+
+  .discover-title {
+    font-size: 58px;
+  }
+}
+.discover-navigation {
+  position: absolute;
+  bottom: 55px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.discover-navigation a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #51463F;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+}
+
+.discover-navigation a:hover,
+.discover-navigation a.active {
+  border-bottom-color: #8F867A;
+}
+
+.discover-navigation {
+  position: absolute;
+  bottom: 55px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.discover-navigation a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #51463F;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+}
+
+.discover-navigation a:hover,
+.discover-navigation a.active {
+  border-bottom-color: #8F867A;
+}             
