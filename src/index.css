@@ -1,0 +1,339 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italianno&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  color: #51463f;
+  background: #EAE4D9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #EAE4D9;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: #51463f;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 16px 12px;
+  }
+}
+
+/* Miette magazine */
+
+.magazine {
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - 80px);
+  margin: 0 auto;
+  padding: 30px 65px;
+  background: #F4EFE5;
+  box-shadow: 0 8px 35px rgba(75, 60, 45, 0.08);
+}
+
+/* Header */
+
+.magazine-header {
+  text-align: center;
+}
+
+.magazine-topline {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #a49a8b;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8e1d7;
+}
+
+.brand {
+  display: block;
+  font-family: 'Italianno', cursive;
+  font-size: 76px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #51463f;
+  margin: 10px 0 5px;
+  text-decoration: none;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 12px 0 22px;
+}
+
+.main-navigation a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #81776c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+  color: #51463f;
+}
+
+.header-divider {
+  border-bottom: 1px solid #e8e1d7;
+}
+
+.magazine-footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 1px solid #e8e1d7;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #a49a8b;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .magazine {
+    padding: 20px 18px;
+    min-height: calc(100vh - 32px);
+  }
+
+  .brand {
+    font-size: 62px;
+  }
+
+  .main-navigation {
+    gap: 20px;
+  }
+
+  .main-navigation a {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .magazine-topline {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+
+/* MIETTE - HOME PAGE */
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 30px;
+  background: #F7F5F0;
+}
+
+/* Open magazine */
+
+.open-magazine {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1150px;
+  min-height: 680px;
+  background: #EDE4D5;
+  box-shadow: 0 15px 40px rgba(50, 40, 30, 0.13);
+  border-radius: 3px;
+  overflow: hidden;
+}
+/* Magazine pages */
+
+.magazine-left,
+.magazine-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+  text-align: center;
+}
+
+/* Center fold */
+
+.magazine-left {
+  border-right: 1px solid #EAE5DC;
+  box-shadow: 5px 0 12px rgba(60, 50, 40, 0.025);
+}
+
+/* Small magazine text */
+
+.magazine-edition {
+  position: absolute;
+  top: 35px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #9A9185;
+}
+
+/* Miette logo */
+
+.left-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.miette-logo {
+  font-family: 'Italianno', cursive;
+  font-size: 115px;
+  font-weight: 400;
+  color: #29251F;
+  line-height: 1;
+  margin: 0;
+}
+
+.miette-subtitle {
+  font-family: 'Italianno', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: #8F867A;
+  margin-top: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Right page */
+
+.right-center {
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-text {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #A49A8B;
+  margin-bottom: 30px;
+}
+
+.hero-title {
+  font-family: 'Italianno', cursive;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #29251F;
+  margin: 0;
+}
+
+.hero-description {
+  max-width: 310px;
+  font-size: 12px;
+  line-height: 2;
+  font-weight: 300;
+  color: #81786D;
+}
+
+/* Navigation */
+
+.home-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.home-navigation a {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #51463F;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.home-navigation a:hover {
+  border-bottom-color: #8F867A;
+}
+
+/* Page numbers */
+
+.magazine-page-number {
+  position: absolute;
+  bottom: 22px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #B3AA9E;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .home-page {
+    padding: 16px;
+  }
+
+  .open-magazine {
+    grid-template-columns: 1fr;
+  }
+
+  .magazine-left,
+  .magazine-right {
+    min-height: 420px;
+    padding: 35px 20px;
+  }
+
+  .magazine-left {
+    border-right: none;
+    border-bottom: 1px solid #EAE5DC;
+  }
+
+  .miette-logo {
+    font-size: 95px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+}
