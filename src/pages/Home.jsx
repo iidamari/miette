@@ -6,16 +6,23 @@ function Home() {
 
         {/* Vasemman sivun sisältö */}
         <section className="magazine-left">
+            <p className="magazine-edition">
+            HOME
+            </p>
+
           <p className="magazine-edition">
         
           </p>
+          
 
           <div className="left-center">
             <h1 className="miette-logo">Miette</h1>
+             
 
             <p className="miette-subtitle">
               a little inspiration for your next meal
             </p>
+             
           </div>
 
           <p className="magazine-page-number">01</p>

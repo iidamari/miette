@@ -8,7 +8,9 @@ function Discover() {
         {/* Vasemman sivun sisältö */}
         <section className="magazine-left discover-left">
 
-         
+         <p className="discover-label">
+            DISCOVER
+          </p>
 
           <div className="discover-left-center">
 
