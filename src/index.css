@@ -4,7 +4,7 @@
 :root {
   font-family: 'Montserrat', sans-serif;
   color: #51463f;
-  background: #EAE4D9;
+  background: #EAE4DC;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #EAE4D9;
+  background: #E8DFD1;
 }
 
 #root {
@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   padding: 40px 24px;
+  background: transparent;
 }
 
 h1, h2, h3 {
@@ -59,13 +60,9 @@ button {
 /* Miette magazine */
 
 .magazine {
-  width: 100%;
-  max-width: 1200px;
-  min-height: calc(100vh - 80px);
-  margin: 0 auto;
-  padding: 30px 65px;
-  background: #F4EFE5;
-  box-shadow: 0 8px 35px rgba(75, 60, 45, 0.08);
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 /* Header */
@@ -122,8 +119,8 @@ button {
 }
 
 .magazine-footer {
-  margin-top: 60px;
-  padding: 20px 0;
+  margin-top: 20px;
+  padding: 12px 0;
   border-top: 1px solid #e8e1d7;
   text-align: center;
   font-size: 9px;
@@ -165,23 +162,35 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 45px 30px;
-  background: #F7F5F0;
+  padding: 8px;
+  background: #E8DFD1;
 }
 
 /* Open magazine */
-
 .open-magazine {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
   max-width: 1150px;
   min-height: 680px;
-  background: #EDE4D5;
-  box-shadow: 0 15px 40px rgba(50, 40, 30, 0.13);
-  border-radius: 3px;
+
+  /* Paperin väri */
+  background: #FAF7F0;
+
+  /* Ohut reunus */
+  border: 1px solid #E2D8C9;
+
+  /* Hienovaraisesti pyöristetyt kulmat */
+  border-radius: 5px 8px 8px 5px;
+
+  /* Lehden varjo */
+  box-shadow:
+    0 28px 55px rgba(60, 45, 30, 0.18),
+    0 8px 16px rgba(60, 45, 30, 0.08);
+
   overflow: hidden;
 }
+
 /* Magazine pages */
 
 .magazine-left,
@@ -193,13 +202,23 @@ button {
   align-items: center;
   padding: 45px;
   text-align: center;
+  background: #FAF7F0;
 }
 
-/* Center fold */
-
 .magazine-left {
-  border-right: 1px solid #EAE5DC;
-  box-shadow: 5px 0 12px rgba(60, 50, 40, 0.025);
+  border-right: 1px solid rgba(80, 65, 45, 0.10);
+
+  box-shadow:
+    inset -12px 0 18px -18px rgba(50, 40, 30, 0.45),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px rgba(80, 65, 45, 0.04);
+}
+
+.magazine-right {
+  box-shadow:
+    inset 12px 0 18px -18px rgba(50, 40, 30, 0.45),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px rgba(80, 65, 45, 0.04);
 }
 
 /* Small magazine text */
@@ -251,7 +270,7 @@ button {
 .welcome-text {
   font-size: 11px;
   letter-spacing: 3px;
-  color: #A49A8B;
+  color: #51463F;
   margin-bottom: 30px;
 }
 
@@ -283,7 +302,8 @@ button {
 }
 
 .home-navigation a {
-  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 3px;
   color: #51463F;
@@ -311,7 +331,7 @@ button {
 
 @media (max-width: 650px) {
   .home-page {
-    padding: 16px;
+    padding: 14px;
   }
 
   .open-magazine {
