@@ -10,11 +10,7 @@ function Home() {
             HOME
             </p>
 
-          <p className="magazine-edition">
         
-          </p>
-          
-
           <div className="left-center">
             <h1 className="miette-logo">Miette</h1>
              
@@ -33,6 +29,7 @@ function Home() {
 
   <div className="right-center">
 
+  <div className="home-text-content">
     <p className="welcome-text">
       WELCOME TO MIETTE
     </p>
@@ -40,13 +37,14 @@ function Home() {
     <p className="hero-title">
       explore recipes and discover new food cultures
     </p>
-
-    <nav className="home-navigation">
-      <a href="/discover">DISCOVER</a>
-      <a href="/favorites">FAVORITES</a>
-    </nav>
-
   </div>
+
+  <nav className="home-navigation">
+    <a href="/discover">DISCOVER</a>
+    <a href="/favorites">FAVORITES</a>
+  </nav>
+
+</div>
 
   <p className="magazine-page-number">02</p>
 

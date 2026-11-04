@@ -302,26 +302,27 @@ function Discover() {
                   !detailsLoading &&
                   !error &&
                   recipes.length > 0 && (
-                    <div className="recipe-grid">
-                      {recipes.map((recipe) => (
-                        <button
-                          className="recipe-card"
-                          key={recipe.idMeal}
-                          onClick={() => openRecipe(recipe.idMeal)}
-                        >
-                          <img
-                            src={recipe.strMealThumb}
-                            alt={recipe.strMeal}
-                          />
+                    <div className="row row-cols-1 row-cols-sm-2 g-3 recipe-grid">
+  {recipes.map((recipe) => (
+    <div className="col" key={recipe.idMeal}>
+      <button
+        className="recipe-card"
+        onClick={() => openRecipe(recipe.idMeal)}
+      >
+        <img
+          src={recipe.strMealThumb}
+          alt={recipe.strMeal}
+        />
 
-                          <h3>{recipe.strMeal}</h3>
+        <h3>{recipe.strMeal}</h3>
 
-                          <span className="recipe-card-link">
-                            VIEW RECIPE →
-                          </span>
-                        </button>
-                      ))}
-                    </div>
+        <span className="recipe-card-link">
+          VIEW RECIPE →
+        </span>
+      </button>
+    </div>
+  ))}
+</div>
                   )}
 
                 {!selectedCulture && !loading && (
