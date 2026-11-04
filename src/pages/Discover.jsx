@@ -1,19 +1,28 @@
 
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Heart } from "lucide-react";
+
+const FAVORITES_KEY = "miette-favorites";
+
+function getSavedFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
 
 function Discover() {
-
   const [recipes, setRecipes] = useState([]);
   const [selectedCulture, setSelectedCulture] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
   const [loading, setLoading] = useState(false);
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [favorites, setFavorites] = useState(getSavedFavorites);
 
-  // Hakee ruokakulttuurin reseptit
   async function fetchRecipes(culture, apiName) {
     setSelectedCulture(culture);
     setSelectedRecipe(null);
@@ -22,35 +31,28 @@ function Discover() {
     setRecipes([]);
 
     try {
-     const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?a=${apiName}`
-    );
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${apiName}`
+      );
 
-      if (!response.ok) {
-        throw new Error("Recipe search failed");
+      if (!response.ok) throw new Error();
+
+      const data = await response.json();
+
+      if (!data.meals || data.meals.length === 0) {
+        setError(`No ${culture} recipes were found.`);
+        return;
       }
 
-    const data = await response.json();
-
-    if (!data.meals || data.meals.length === 0) {
-    setError(`No ${culture} recipes were found.`);
-    return;
-    }
-
-    setRecipes(data.meals);  
-
-   
-
+      setRecipes(data.meals);
     } catch (error) {
       console.error(error);
       setError("Something went wrong. Please try again.");
-
     } finally {
       setLoading(false);
     }
   }
 
-  // Hakee yksittäisen reseptin tarkat tiedot
   async function openRecipe(id) {
     setDetailsLoading(true);
     setError("");
@@ -61,34 +63,53 @@ function Discover() {
         `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
       );
 
-      if (!response.ok) {
-        throw new Error("Recipe details could not be loaded");
-      }
+      if (!response.ok) throw new Error();
 
       const data = await response.json();
 
       if (!data.meals || data.meals.length === 0) {
-        throw new Error("Recipe not found");
+        throw new Error();
       }
 
       setSelectedRecipe(data.meals[0]);
-
     } catch (error) {
       console.error(error);
       setError("Recipe details could not be loaded.");
-
     } finally {
       setDetailsLoading(false);
     }
   }
 
-  // Paluu reseptilistaan
+  function toggleFavorite(recipe) {
+    const alreadySaved = favorites.some(
+      (favorite) => favorite.idMeal === recipe.idMeal
+    );
+
+    const updatedFavorites = alreadySaved
+      ? favorites.filter(
+          (favorite) => favorite.idMeal !== recipe.idMeal
+        )
+      : [...favorites, recipe];
+
+    setFavorites(updatedFavorites);
+
+    localStorage.setItem(
+      FAVORITES_KEY,
+      JSON.stringify(updatedFavorites)
+    );
+  }
+
+  function isFavorite(id) {
+    return favorites.some(
+      (favorite) => favorite.idMeal === id
+    );
+  }
+
   function backToRecipes() {
     setSelectedRecipe(null);
     setError("");
   }
 
-  // Kerätään reseptin ainesosat ja määrät
   function getIngredients(recipe) {
     const ingredients = [];
 
@@ -97,10 +118,7 @@ function Discover() {
       const measure = recipe[`strMeasure${i}`];
 
       if (ingredient && ingredient.trim()) {
-        ingredients.push({
-          ingredient,
-          measure
-        });
+        ingredients.push({ ingredient, measure });
       }
     }
 
@@ -109,15 +127,12 @@ function Discover() {
 
   return (
     <main className="discover-page">
-
       <div className="open-magazine discover-magazine">
 
         {/* VASEN SIVU */}
         <section className="magazine-left discover-left">
 
-          <p className="discover-label">
-            DISCOVER
-          </p>
+          <p className="discover-label">DISCOVER</p>
 
           <div className="discover-left-center">
 
@@ -129,36 +144,35 @@ function Discover() {
               Choose a food culture and find inspiration for your next meal
             </p>
 
-           <nav className="culture-navigation">
-
-            {[
+            <nav className="culture-navigation">
+              {[
                 { name: "Italian", apiName: "Italian" },
                 { name: "Greek", apiName: "Greek" },
                 { name: "French", apiName: "France" },
                 { name: "Mexican", apiName: "Mexican" }
-            ].map((culture) => (
-            <button
-                key={culture.name}
-                className={
+              ].map((culture) => (
+                <button
+                  key={culture.name}
+                  className={
                     selectedCulture === culture.name ? "active" : ""
-                }
-                onClick={() => fetchRecipes(culture.name, culture.apiName)}
-                aria-pressed={selectedCulture === culture.name}
-            >
-                {culture.name}
+                  }
+                  onClick={() =>
+                    fetchRecipes(culture.name, culture.apiName)
+                  }
+                  aria-pressed={selectedCulture === culture.name}
+                >
+                  {culture.name}
 
-                {selectedCulture === culture.name && (
+                  {selectedCulture === culture.name && (
                     <span className="culture-dot">•</span>
-                )}
-            </button>
-        ))}
-
-    </nav>
+                  )}
+                </button>
+              ))}
+            </nav>
 
           </div>
 
           <p className="magazine-page-number">03</p>
-
         </section>
 
         {/* OIKEA SIVU */}
@@ -171,20 +185,52 @@ function Discover() {
               /* YKSITTÄISEN RESEPTIN TIEDOT */
               <div className="recipe-details">
 
-                <button
-                  className="recipe-back-button"
-                  onClick={backToRecipes}
-                  aria-label="Back to recipes"
-                >
-                  <ArrowLeft size={18} />
-                  <span>BACK TO RECIPES</span>
-                </button>
+                {/* YLÄRIVI */}
+                <div className="recipe-top-actions">
 
-                
+                  <button
+                    className="recipe-back-button"
+                    onClick={backToRecipes}
+                    aria-label="Back to recipes"
+                  >
+                    <ArrowLeft size={18} />
+                    <span>BACK TO RECIPES</span>
+                  </button>
+
+                  <div className="favorite-action">
+
+                    <button
+                      className="recipe-favorite-button"
+                      onClick={() => toggleFavorite(selectedRecipe)}
+                      aria-label={
+                        isFavorite(selectedRecipe.idMeal)
+                          ? "Remove from favorites"
+                          : "Add to favorites"
+                      }
+                      aria-pressed={isFavorite(selectedRecipe.idMeal)}
+                    >
+                      <Heart
+                        size={22}
+                        fill={
+                          isFavorite(selectedRecipe.idMeal)
+                            ? "currentColor"
+                            : "none"
+                        }
+                      />
+                    </button>
+
+                    <p className="favorite-hint">
+                      Tap the heart to save this recipe
+                    </p>
+
+                  </div>
+                </div>
+
+                {/* RESEPTIN TIEDOT */}
                 <p className="recipe-cuisine-label">
-                {selectedRecipe.strArea === "France"
-                ? "FRENCH CUISINE"
-                : `${selectedRecipe.strArea?.toUpperCase()} CUISINE`}
+                  {selectedRecipe.strArea === "France"
+                    ? "FRENCH CUISINE"
+                    : `${selectedRecipe.strArea?.toUpperCase()} CUISINE`}
                 </p>
 
                 <h2 className="discover-recipe-title">
@@ -228,7 +274,6 @@ function Discover() {
                   )}
 
                 </div>
-
               </div>
 
             ) : (
@@ -245,57 +290,54 @@ function Discover() {
                     : "Discover something delicious"}
                 </h2>
 
-                {loading && (
-                  <p>Loading recipes...</p>
-                )}
+                {loading && <p>Loading recipes...</p>}
 
                 {detailsLoading && (
                   <p>Loading recipe details...</p>
                 )}
 
-                {error && (
-                  <p role="alert">{error}</p>
-                )}
+                {error && <p role="alert">{error}</p>}
 
-                {!loading && !detailsLoading && !error && recipes.length > 0 && (
-                  <div className="recipe-grid">
+                {!loading &&
+                  !detailsLoading &&
+                  !error &&
+                  recipes.length > 0 && (
+                    <div className="recipe-grid">
+                      {recipes.map((recipe) => (
+                        <button
+                          className="recipe-card"
+                          key={recipe.idMeal}
+                          onClick={() => openRecipe(recipe.idMeal)}
+                        >
+                          <img
+                            src={recipe.strMealThumb}
+                            alt={recipe.strMeal}
+                          />
 
-                    {recipes.map((recipe) => (
+                          <h3>{recipe.strMeal}</h3>
 
-                      <button
-                        className="recipe-card"
-                        key={recipe.idMeal}
-                        onClick={() => openRecipe(recipe.idMeal)}
-                      >
-
-                        <img
-                          src={recipe.strMealThumb}
-                          alt={recipe.strMeal}
-                        />
-
-                        <h3>{recipe.strMeal}</h3>
-
-                        <span className="recipe-card-link">
-                          VIEW RECIPE →
-                        </span>
-
-                      </button>
-
-                    ))}
-
-                  </div>
-                )}
+                          <span className="recipe-card-link">
+                            VIEW RECIPE →
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
 
                 {!selectedCulture && !loading && (
                   <div className="recipe-placeholder">
-                    <p>Choose a food culture to discover recipes.</p>
+                    <p>
+                      Choose a food culture to discover recipes
+                    </p>
                   </div>
                 )}
 
-                {!loading && selectedCulture && recipes.length === 0 && !error && (
-                  <p>No recipes found.</p>
-                )}
-
+                {!loading &&
+                  selectedCulture &&
+                  recipes.length === 0 &&
+                  !error && (
+                    <p>No recipes found.</p>
+                  )}
               </>
             )}
 
@@ -304,16 +346,16 @@ function Discover() {
           {/* SIVUNAVIGOINTI */}
           <nav className="discover-navigation">
             <Link to="/">HOME</Link>
-            <Link to="/discover" className="active">DISCOVER</Link>
+            <Link to="/discover" className="active">
+              DISCOVER
+            </Link>
             <Link to="/favorites">FAVORITES</Link>
           </nav>
 
           <p className="magazine-page-number">04</p>
 
         </section>
-
       </div>
-
     </main>
   );
 }

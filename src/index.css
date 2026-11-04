@@ -796,12 +796,13 @@ button {
   height: 480px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 5px 18px 30px 12px;
+  padding: 5px 30px 03 px 12px;
   text-align: left;
   scrollbar-width: thin;
   scrollbar-color: #C8B9A7 transparent;
   box-sizing: border-box;
   overscroll-behavior: contain;
+  margin-top: 20px;
 }
 
 .recipe-details::-webkit-scrollbar {
@@ -933,4 +934,183 @@ button {
 
 .ingredient-list li {
   min-width: 0;
+}
+/* Favorite heart button */
+
+.recipe-details {
+  position: relative;
+}
+
+.recipe-favorite-button {
+  position: absolute;
+  top: 0;
+  right: 35px;
+  z-index: 6;
+  background: transparent;
+  border: none;
+  color: #8F867A;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.recipe-favorite-button:hover {
+  color: #A66D63;
+  transform: scale(1.1);
+}
+
+.recipe-favorite-button[aria-pressed="true"] {
+  color: #A66D63;
+}
+/* FAVORITES RECIPE CARDS */
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-height: 390px;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 5px 8px 15px;
+}
+
+.favorite-card {
+  min-width: 0;
+  background: #FAF7F0;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.favorite-card img {
+  display: block;
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.favorite-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 9px 5px 5px;
+  color: #51463F;
+}
+
+@media (max-width: 650px) {
+  .favorites-grid {
+    gap: 12px;
+    max-height: 350px;
+  }
+
+  .favorite-card img {
+    height: 100px;
+  }
+}
+.favorite-hint {
+  text-align: right;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: #9A9185;
+  margin: 0 35px 8px 0;
+}
+/* RECIPE TOP ACTIONS */
+
+.recipe-top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.recipe-back-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  color: #81786D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.favorite-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.recipe-favorite-button {
+  position: static;
+  background: transparent;
+  border: none;
+  color: #8F867A;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.recipe-favorite-button:hover {
+  color: #A66D63;
+}
+
+.recipe-favorite-button[aria-pressed="true"] {
+  color: #A66D63;
+}
+
+.favorite-hint {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #8F867A;
+  text-align: center;
+  margin: 0;
+}
+.recipe-details {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.recipe-details::-webkit-scrollbar {
+  display: none;
+}
+.favorite-card {
+  width: 100%;
+  padding: 0 0 10px;
+  border: none;
+  background: #FAF7F0;
+  text-align: center;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.25s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-3px);
+}
+
+.favorite-card img {
+  display: block;
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.favorite-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 9px;
+  color: #51463F;
+}
+
+.favorite-card:focus-visible {
+  outline: 2px solid #8F867A;
+  outline-offset: 4px;
 }
