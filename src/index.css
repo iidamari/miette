@@ -1262,13 +1262,18 @@ button {
   /* Navigaatio */
 
   .home-navigation {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
-  }
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 0;
+}
+.magazine-right {
+  position: relative;
+}
 
   .home-navigation a {
     font-size: 10px;
@@ -1279,6 +1284,37 @@ button {
   .magazine-page-number {
     display: none;
   }
+  .magazine-right {
+  position: relative;
+}
+/* Tekstit ylemmäs */
+.home-text-content {
+  transform: translateY(-80px);
+}
+
+/* Painikkeet alemmas */
+.home-navigation {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  transform: none;
+}
+
+.home-navigation {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+}
+
+
+
 } 
 /* DISCOVER PAGE BOTTOM NAVIGATION */
 
