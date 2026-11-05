@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <main className="home-page">
@@ -40,9 +40,9 @@ function Home() {
   </div>
 
   <nav className="home-navigation">
-    <a href="/discover">DISCOVER</a>
-    <a href="/favorites">FAVORITES</a>
-  </nav>
+  <Link to="/discover">DISCOVER</Link>
+  <Link to="/favorites">FAVORITES</Link>
+</nav>
 
 </div>
 

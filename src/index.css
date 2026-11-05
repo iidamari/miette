@@ -135,6 +135,9 @@ button {
     padding: 20px 18px;
     min-height: calc(100vh - 32px);
   }
+  .magazine-footer {
+  margin-top: 5px;
+  }
 
   .brand {
     font-size: 62px;
@@ -303,9 +306,9 @@ button {
 
 .home-navigation a {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #51463F;
   text-decoration: none;
   padding-bottom: 5px;
@@ -538,7 +541,7 @@ button {
     flex-direction: column;
     width: 100%;
     max-width: 480px;
-    min-height: auto;
+    min-height: 900px;
     background: #FAF7F0;
     border: 1px solid #E2D8C9;
     border-radius: 5px;
@@ -549,22 +552,51 @@ button {
   .discover-left,
   .discover-right {
     width: 100%;
-    min-height: 0;
     height: auto;
     border: none;
     box-shadow: none;
-    padding: 20px;
+    padding: 30px 20px;
+  }
+  .discover-left {
+  min-height: 280px;
+  }
+
+  .discover-right {
+  min-height: 400px;
+  }
+  .discover-right-center {
+  padding-bottom: 20px;
   }
 
   .discover-title {
     font-size: 58px;
   }
+  .culture-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    margin-top: 20px;
+  }
+  .discover-welcome {
+  transform: translateY(-38px);
+  }
+
+  .discover-recipe-title {
+  transform: translateY(-0px);
+  margin-bottom: 15px;
+  font-size: 36px;
+  }
+  .recipe-grid {
+  transform: translateY(-75px);
+  }
 
   .discover-navigation {
-    position: static;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 20px;
+  position: relative;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
+  transform: translateY(45px);
+
   }
 }   
 
@@ -670,6 +702,7 @@ button {
 .favorites-navigation a {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
+  font-weight: 400;
   letter-spacing: 2px;
   color: #51463F;
   text-decoration: none;
@@ -695,7 +728,7 @@ button {
 
   .favorites-left,
   .favorites-right {
-    min-height: 420px;
+    min-height: 460px;
   }
 
   .favorites-title {
@@ -703,7 +736,7 @@ button {
   }
 
   .favorites-heading {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .favorites-navigation {
@@ -1168,7 +1201,7 @@ button {
   /* Ylempi sivu */
 
   .magazine-left {
-    min-height: 250px;
+    min-height: 310px;
     padding-top: 45px;
     padding-bottom: 30px;
     border-bottom: none;
@@ -1200,7 +1233,7 @@ button {
   /* Alempi sivu */
 
   .magazine-right {
-    min-height: 300px;
+    min-height: 370px;
     padding: 35px 24px;
   }
 
@@ -1261,9 +1294,9 @@ button {
 
 .discover-navigation a {
   font-family: 'Montserrat', sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #51463F;
   text-decoration: none;
   padding-bottom: 5px;
@@ -1274,4 +1307,77 @@ button {
 .discover-navigation a:hover,
 .discover-navigation a.active {
   border-bottom-color: #8F867A;
+}
+@media (max-width: 650px) {
+  .discover-right-center {
+    padding-bottom: 0;
+  }
+
+  .discover-right {
+    min-height: 320px;
+  }
+}
+@media (max-width: 650px) {
+  .discover-right-center > .discover-recipe-title {
+  transform: translateY(-38px);
+  margin-bottom: 25px;
+}
+
+  .recipe-cuisine-label {
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 650px) {
+  .opened-recipe-title {
+    position: relative;
+    top: -15px;
+    z-index: 1;
+  }
+}
+@media (max-width: 650px) {
+
+  .favorites-right {
+    padding-bottom: 35px;
+  }
+
+  .favorites-navigation {
+    position: static;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+}
+@media (max-width: 650px) {
+
+  /* Oikean sivun sisältö */
+  .favorites-right-center {
+    gap: 0;
+  }
+
+  /* YOUR SAVED RECIPES */
+  .favorites-welcome {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    line-height: 1.8;
+  }
+
+  /* A little collection of inspiration */
+  .favorites-heading {
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 36px;
+    line-height: 1.3;
+    max-width: 300px;
+  }
+
+  /* Tyhjän suosikkilistan teksti */
+  .favorites-empty {
+    margin-top: 10px;
+  }
+
 }
