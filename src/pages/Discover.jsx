@@ -144,7 +144,10 @@ function Discover() {
               Choose a food culture and find inspiration for your next meal
             </p>
 
-            <nav className="culture-navigation">
+            <nav
+                className="culture-navigation"
+                aria-label="Choose a food culture"
+>
               {[
                 { name: "Italian", apiName: "Italian" },
                 { name: "Greek", apiName: "Greek" },
@@ -289,12 +292,19 @@ function Discover() {
                     ? `${selectedCulture} recipes`
                     : "Discover something delicious"}
                 </h2>
-
-                {loading && <p>Loading recipes...</p>}
+                
+                {loading && (
+                <span className="visually-hidden" role="status">
+                Loading recipes...
+                </span>
+                )}
 
                 {detailsLoading && (
-                  <p>Loading recipe details...</p>
+                <p role="status" aria-live="polite">
+                Loading recipe details...
+                </p>
                 )}
+               
 
                 {error && <p role="alert">{error}</p>}
 
@@ -345,15 +355,18 @@ function Discover() {
           </div>
 
           {/* SIVUNAVIGOINTI */}
-          <nav className="discover-navigation">
+          <nav
+            className="discover-navigation"
+            aria-label="Main navigation"
+            >
             <Link to="/">HOME</Link>
             <Link to="/discover" className="active">
-              DISCOVER
+            DISCOVER
             </Link>
             <Link to="/favorites">FAVORITES</Link>
-          </nav>
+            </nav>
 
-          <p className="magazine-page-number">04</p>
+            <p className="magazine-page-number">04</p>
 
         </section>
       </div>

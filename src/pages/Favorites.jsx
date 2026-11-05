@@ -96,6 +96,7 @@ function Favorites() {
                       className="recipe-favorite-button"
                       onClick={() => toggleFavorite(selectedRecipe)}
                       aria-label="Remove from favorites"
+                      aria-pressed="true"
                     >
                       <Heart size={22} fill="currentColor" />
                     </button>
@@ -204,7 +205,8 @@ function Favorites() {
           </div>
 
           {/* NAVIGOINTI */}
-          <nav className="favorites-navigation">
+          <nav className="favorites-navigation"
+          aria-label="Main navigation">
             <Link to="/">HOME</Link>
             <Link to="/discover">DISCOVER</Link>
             <Link to="/favorites" className="active">

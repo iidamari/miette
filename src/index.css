@@ -290,7 +290,7 @@ button {
   font-size: 12px;
   line-height: 2;
   font-weight: 300;
-  color: #81786D;
+  color: #766D62;
 }
 
 /* Navigation */
@@ -327,7 +327,7 @@ button {
   bottom: 22px;
   font-size: 9px;
   letter-spacing: 2px;
-  color: #B3AA9E;
+  color: #756B5F;
 }
 
 /* Mobile */
@@ -959,7 +959,7 @@ button {
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 3px;
-  color: #9A9185;
+  color: #756B5F;
   margin: 10px 0 8px;
 }
 .recipe-information h3 {
@@ -1424,5 +1424,23 @@ button {
   .favorites-right-center {
     margin-top: -70px;
   }
+}
+/* ACCESSIBILITY – KEYBOARD FOCUS */
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #51463F;
+  outline-offset: 4px;
+}
+/* ACCESSIBILITY – REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

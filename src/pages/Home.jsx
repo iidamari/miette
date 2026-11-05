@@ -34,12 +34,15 @@ function Home() {
       WELCOME TO MIETTE
     </p>
 
-    <p className="hero-title">
+    <h2 className="hero-title">
       explore recipes and discover new food cultures
-    </p>
+    </h2>
   </div>
 
-  <nav className="home-navigation">
+  <nav
+  className="home-navigation"
+  aria-label="Choose a food culture"
+    >
   <Link to="/discover">DISCOVER</Link>
   <Link to="/favorites">FAVORITES</Link>
 </nav>
