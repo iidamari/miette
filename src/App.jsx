@@ -6,7 +6,7 @@ import Favorites from "./pages/Favorites";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/miette">
       <div className="magazine">
 
         <Routes>
