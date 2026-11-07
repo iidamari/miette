@@ -1,5 +1,4 @@
 # Miette
-A little inspiration for your next meal.
 
 Miette is a recipe discovery application built with React. It allows users to explore recipes from different food cultures, view ingredients and cooking instructions, and save their favorite recipes for later.
 
@@ -19,13 +18,12 @@ Home page with a magazine-inspired design
 Discover recipes from different food cultures
 Browse recipes and view detailed cooking instructions
 Save and remove favorite recipes
-Responsive layout for different screen sizes
 
 # Installation
 Clone the repository:
 
 bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone 
 
 Navigate to the project folder:
 bash
