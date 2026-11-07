@@ -1,48 +1,61 @@
 # Miette
+A little inspiration for your next meal.
 
-*A little inspiration for your next meal.*
+Miette is a recipe discovery application built with React. It allows users to explore recipes from different food cultures, view ingredients and cooking instructions, and save their favorite recipes for later.
 
-Miette is a recipe discovery application built with React.
-It helps users explore recipes from different food cultures
-and save their favorite recipes.
+The application has a magazine-inspired design and is built to work on both desktop and mobile devices.
 
-## Technologies
+# Technologies
+React
+Vite
+React Router
+Bootstrap
+Lucide React
+TheMealDB API
+localStorage
 
-- React
-- Vite
-- React Router
-- Bootstrap
-- Lucide React
-- TheMealDB API
-- localStorage
+# Features
+Home page with a magazine-inspired design
+Discover recipes from different food cultures
+Browse recipes and view detailed cooking instructions
+Save and remove favorite recipes
+Responsive layout for different screen sizes
 
-## Features
-
-- Home page with a magazine-inspired design
-- Discover recipes from different food cultures
-- Explore recipe details
-- Save and manage favorite recipes
-
-## Installation
-
+# Installation
 Clone the repository:
 
-```bash
+bash
 git clone YOUR_GITHUB_REPOSITORY_URL
-```
+
+Navigate to the project folder:
+bash
+cd miette
 
 Install dependencies:
-
-```bash
+bash
 npm install
-```
 
 Start the development server:
-
-```bash
+bash
 npm run dev
-```
 
-## Author
+The application will be available at the local address shown in your terminal.
 
+# Building for Production
+To create an optimized production build, run:
+bash
+npm run build
+
+To preview the production build locally:
+bash
+npm run preview
+
+# API
+Miette uses TheMealDB API to fetch recipe data.
+
+The application uses the Fetch API with async/await to retrieve recipes and their details.
+
+Favorite recipes are saved in the browser's localStorage.
+
+# Author
 Iida Kokkoniemi

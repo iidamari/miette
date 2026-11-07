@@ -189,7 +189,9 @@ function Favorites() {
                           alt={recipe.strMeal}
                         />
 
-                        <h3>{recipe.strMeal}</h3>
+                        <span className="recipe-card-title">
+                        {recipe.strMeal}
+                        </span>
 
                         <span className="recipe-card-link">
                           VIEW RECIPE →

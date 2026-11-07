@@ -76,7 +76,7 @@ button {
   justify-content: space-between;
   font-size: 9px;
   letter-spacing: 2px;
-  color: #a49a8b;
+  color: #66594E;
   padding-bottom: 18px;
   border-bottom: 1px solid #e8e1d7;
 }
@@ -125,7 +125,7 @@ button {
   text-align: center;
   font-size: 9px;
   letter-spacing: 3px;
-  color: #a49a8b;
+  color: #66594E;
 }
 
 /* Mobile */
@@ -230,7 +230,7 @@ button {
   top: 35px;
   font-size: 9px;
   letter-spacing: 3px;
-  color: #9A9185;
+  color: #66594E;
 }
 
 /* Miette logo */
@@ -254,7 +254,7 @@ button {
   font-family: 'Italianno', cursive;
   font-size: 28px;
   font-weight: 400;
-  color: #8F867A;
+  color: #66594E;
   margin-top: 12px;
   letter-spacing: 0;
   text-transform: none;
@@ -317,7 +317,7 @@ button {
 }
 
 .home-navigation a:hover {
-  border-bottom-color: #8F867A;
+  border-bottom-color: #66594E;
 }
 
 /* Page numbers */
@@ -327,7 +327,7 @@ button {
   bottom: 22px;
   font-size: 9px;
   letter-spacing: 2px;
-  color: #756B5F;
+  color: #66594E;
 }
 
 /* Mobile */
@@ -440,7 +440,7 @@ button {
 
 .discover-subtitle {
   font-size: 11px;
-  color: #81786D;
+  color: #66594E;
   text-align: center;
 }
 
@@ -472,7 +472,7 @@ button {
 
 .culture-navigation button:hover,
 .culture-navigation button.active {
-  border-bottom-color: #8F867A;
+  border-bottom-color: #66594E;
   color: #29251F;
 }
 
@@ -505,7 +505,7 @@ button {
 .discover-description {
   max-width: 300px;
   font-size: 11px;
-  color: #81786D;
+  color: #66594E;
   text-align: center;
 }
 
@@ -523,7 +523,7 @@ button {
 .recipe-placeholder p {
   font-family: 'Italianno', cursive;
   font-size: 28px;
-  color: #8F867A;
+  color: #66594E;
 }
 
 /* Mobile */
@@ -642,7 +642,7 @@ button {
 
 .favorites-subtitle {
   font-size: 11px;
-  color: #81786D;
+  color: #66594E;
   text-align: center;
 }
 
@@ -685,7 +685,7 @@ button {
 .favorites-empty p {
   font-family: 'Italianno', cursive;
   font-size: 27px;
-  color: #8F867A;
+  color: #66594E;
   text-align: center;
 }
 
@@ -712,7 +712,7 @@ button {
 
 .favorites-navigation a:hover,
 .favorites-navigation a.active {
-  border-bottom-color: #8F867A;
+  border-bottom-color: #66594E;
 }
 
 /* Mobile */
@@ -775,7 +775,8 @@ button {
   border-radius: 2px;
 }
 
-.recipe-card h3 {
+.recipe-card-title {
+  display: block;
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   font-weight: 500;
@@ -800,7 +801,7 @@ button {
 /* ACTIVE FOOD CULTURE */
 
 .culture-navigation button.active {
-  border-bottom: 1px solid #8F867A;
+  border-bottom: 1px solid #66594E;
   color: #29251F;
   font-weight: 500;
 }
@@ -827,7 +828,7 @@ button {
 }
 
 .recipe-card:focus-visible {
-  outline: 2px solid #8F867A;
+  outline: 2px solid #66594E;
   outline-offset: 4px;
 }
 
@@ -835,7 +836,7 @@ button {
   display: block;
   font-size: 8px;
   letter-spacing: 2px;
-  color: #8F867A;
+  color: #66594E;
   margin-top: 5px;
 }
 
@@ -846,7 +847,7 @@ button {
   height: 480px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 5px 30px 03 px 12px;
+  padding: 5px 30px 12px;
   text-align: left;
   scrollbar-width: thin;
   scrollbar-color: #C8B9A7 transparent;
@@ -881,7 +882,7 @@ button {
   background: none;
   border: none;
   padding: 5px 0 15px;
-  color: #81786D;
+  color: #66594E;
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   letter-spacing: 2px;
@@ -923,14 +924,14 @@ button {
 }
 
 .ingredient-list li span:last-child {
-  color: #8F867A;
+  color: #66594E;
   text-align: right;
 }
 
 .recipe-instructions {
   font-size: 11px;
   line-height: 2;
-  color: #81786D;
+  color: #66594E;
   white-space: pre-line;
 }
 
@@ -939,7 +940,7 @@ button {
   margin: 10px 0;
   font-size: 10px;
   letter-spacing: 1px;
-  color: #81786D;
+  color: #66594E;
   text-decoration: underline;
 }
 
@@ -959,7 +960,7 @@ button {
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 3px;
-  color: #756B5F;
+  color: #66594E;
   margin: 10px 0 8px;
 }
 .recipe-information h3 {
@@ -971,7 +972,7 @@ button {
 .recipe-instructions {
   font-size: 10px;
   line-height: 1.7;
-  color: #81786D;
+  color: #66594E;
 }
 .ingredient-list {
   display: grid;
@@ -998,7 +999,7 @@ button {
   z-index: 6;
   background: transparent;
   border: none;
-  color: #8F867A;
+  color: #66594E;
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -1062,7 +1063,7 @@ button {
   text-align: right;
   font-size: 8px;
   letter-spacing: 0.5px;
-  color: #9A9185;
+  color: #66594E;
   margin: 0 35px 8px 0;
 }
 /* RECIPE TOP ACTIONS */
@@ -1083,7 +1084,7 @@ button {
   background: none;
   border: none;
   padding: 8px 0;
-  color: #81786D;
+  color: #66594E;
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   letter-spacing: 2px;
@@ -1101,7 +1102,7 @@ button {
   position: static;
   background: transparent;
   border: none;
-  color: #8F867A;
+  color: #66594E;
   cursor: pointer;
   padding: 8px;
 }
@@ -1117,7 +1118,7 @@ button {
 .favorite-hint {
   font-size: 8px;
   letter-spacing: 1px;
-  color: #8F867A;
+  color: #66594E;
   text-align: center;
   margin: 0;
 }
@@ -1161,7 +1162,7 @@ button {
 }
 
 .favorite-card:focus-visible {
-  outline: 2px solid #8F867A;
+  outline: 2px #66594E;
   outline-offset: 4px;
 }
 /* HOME PAGE - MOBILE RESPONSIVE */
@@ -1342,7 +1343,7 @@ button {
 
 .discover-navigation a:hover,
 .discover-navigation a.active {
-  border-bottom-color: #8F867A;
+  border-bottom-color: #66594E;
 }
 @media (max-width: 650px) {
   .discover-right-center {
@@ -1443,4 +1444,17 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+@media (min-width: 651px) {
+  .favorites-right-center {
+    transform: translateY(40px);
+  }
+}
+/* ACCESSIBILITY – SCROLLABLE AREAS */
+
+.recipe-details:focus-visible,
+.recipe-grid:focus-visible,
+.favorites-grid:focus-visible {
+  outline: 2px solid #51463F;
+  outline-offset: 4px;
 }
