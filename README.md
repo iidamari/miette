@@ -22,30 +22,24 @@ Save and remove favorite recipes
 # Installation
 Clone the repository:
 
-bash
-git clone 
+git clone https://github.com/iidamari/miette.git
 
 Navigate to the project folder:
-bash
 cd miette
 
 Install dependencies:
-bash
 npm install
 
 Start the development server:
-bash
 npm run dev
 
 The application will be available at the local address shown in your terminal.
 
 # Building for Production
 To create an optimized production build, run:
-bash
 npm run build
 
 To preview the production build locally:
-bash
 npm run preview
 
 # API
